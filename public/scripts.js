@@ -32,13 +32,13 @@
     zValueDisplay.innerText = z.toFixed(3);
   };
 
-  // Testing updating accel values - not needed later
+  // --------- Testing updating accel values - not needed later
   const generateRandomNumbers = () => {
     const x = Math.random();
     displayValues(x, x, x);
   };
   setInterval(generateRandomNumbers, 500);
-  //  Testing updating accel values - not needed later
+  // --------- Testing updating accel values - not needed later
 
   initSensors();
 })();
