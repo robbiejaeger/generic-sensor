@@ -3,6 +3,14 @@ const app = express();
 
 app.set('port', process.env.PORT || 3000);
 app.use(express.static('public'));
+if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
+
+const requireHTTPS = (request, response, next) => {
+  if (request.headers['x-forwarded-proto'] !== 'https') {
+    return response.redirect('https://' + request.get('host') + request.url);
+  }
+  next();
+};
 
 app.use((request, response, next) => {
   response.redirect('/');
