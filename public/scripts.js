@@ -8,14 +8,29 @@
 
   const updateAccelerationValues = () => {
     console.log(x, y, z)
-    console.log('Sensor reading.');
+    console.log('Accelerometer reading.');
   };
 
-  const displayError = event => {
+  const handleError = event => {
     if (event.error.name === 'NotReadableError') {
-      console.log('Sensor is not available.');
+      displayError();
     }
   };
 
+  const displayError = () => {
+    console.log('Accelerometer is not available.');
+  };
+
+  const displayValues = (x, y, z) => {
+    
+  };
+
+  // Testing updating accel values - not needed later
+  const generateRandomNumbers = () => {
+    console.log(1);
+    return Math.random();
+  };
+
+  setInterval(generateRandomNumbers, 500);
   initSensors();
 })();
