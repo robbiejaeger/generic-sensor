@@ -1,14 +1,18 @@
+/* GENERAL LAYOUR */
+
 body {
   background-color: #F5F5F5;
-  color: #333;
-  font-family: sans-serif;
+  color: #212121;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   text-align: center;
 }
 
 header {
-  background-color: #FFF;
+  background-color: #3F51B5;
   box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  color: #FFF;
+  font-weight: 100;
   padding: 15px 0;
 }
 
@@ -23,6 +27,8 @@ h2 {
   margin: 10px 0;
 }
 
+/* ACCELERATION VALUES DISPLAY */
+
 .value {
   margin: 10px 0;
 }
@@ -35,21 +41,27 @@ h2 {
 }
 
 #x-value, #x-max {
-  color: #990000;
+  color: #D32F2F;
 }
 
 #y-value, #y-max {
-  color: #003366;
+  color: #303F9F;
 }
 
 #z-value, #z-max {
-  color: #476f01;
+  color: #388E3C;
 }
 
 .units {
-  color: #999;
+  color: #BDBDBD;
   font-weight: 100;
-  font-size: 1.5em;
+  font-size: 1.25em;
+}
+
+/* MAX VALUES DISPLAY */
+
+#max-values h3 {
+  display: inline-block;
 }
 
 #max-values .units {
@@ -58,13 +70,23 @@ h2 {
 
 #max-values p {
   display: inline-block;
+  margin: 5px;
 }
+
+#max-values div {
+  display: block;
+}
+
+#x-max, #y-max, #z-max {
+  font-size: 1.75em;
+}
+
+/* OTHER INFO */
 
 .other-info {
   padding: 15px 40px;
 }
 
 .other-info p {
-  font-size: 0.9em;
   margin: 10px 0;
 }
