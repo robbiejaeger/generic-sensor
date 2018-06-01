@@ -3,7 +3,7 @@
 body {
   background-color: #F5F5F5;
   color: #212121;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   text-align: center;
 }
@@ -13,18 +13,24 @@ header {
   box-shadow: 0 3px 5px rgba(0,0,0,0.1);
   color: #FFF;
   font-weight: 100;
-  padding: 15px 0;
+  padding: 5px 0;
 }
 
 section {
   background-color: #FFF;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.1), 0 2px 3px rgba(0,0,0,0.05);
-  margin: 15px 10px;
+  border-bottom: 1px solid #BDBDBD;
+  margin: 0;
   padding: 15px 20px;
 }
 
+h1 {
+  margin: 20px 0 5px 0;
+}
+
 h2 {
-  margin: 10px 0;
+  color: #C5CAE9;
+  font-size: 1.25em;
+  margin: 10px 0 15px 0;
 }
 
 /* ACCELERATION VALUES DISPLAY */
@@ -53,32 +59,25 @@ h2 {
 }
 
 .units {
-  color: #BDBDBD;
+  color: #757575;
   font-weight: 100;
   font-size: 1.25em;
 }
 
 /* MAX VALUES DISPLAY */
 
-#max-values h3 {
-  display: inline-block;
-}
-
 #max-values .units {
-  font-size: 1em; 
+  font-size: 1em;
 }
 
 #max-values p {
-  display: inline-block;
   margin: 5px;
 }
 
-#max-values div {
-  display: block;
-}
-
 #x-max, #y-max, #z-max {
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.75em;
+  margin: 0 5px;
 }
 
 /* OTHER INFO */

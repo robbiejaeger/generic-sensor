@@ -3,6 +3,16 @@
   const yValueDisplay = document.getElementById('y-value');
   const zValueDisplay = document.getElementById('z-value');
 
+  const xMaxDisplay = document.getElementById('x-max');
+  const yMaxDisplay = document.getElementById('y-max');
+  const zMaxDisplay = document.getElementById('z-max');
+
+  const resetMaxBtn = document.getElementById('reset-max');
+
+  xMax = 0;
+  yMax = 0;
+  zMax = 0;
+
   const initSensors = () => {
     const accelSensor = new Accelerometer();
     accelSensor.onreading = updateAccelerationValues;
@@ -14,6 +24,7 @@
     console.log('Accelerometer reading.');
     console.log(x, y, z);
     displayValues(x, y, z);
+    displayMaxValues(x, y, z);
   };
 
   const handleError = event => {
@@ -27,21 +38,38 @@
   };
 
   const displayValues = (x, y, z) => {
-    if (x >= 0) {
-      xValueDisplay.innerText = '+' + x.toFixed(3);
+    xValueDisplay.innerText = formatValues(x);
+    yValueDisplay.innerText = formatValues(y);
+    zValueDisplay.innerText = formatValues(z);
+  };
+
+  const displayMaxValues = (x, y, z) => {
+    xMax = findMax(x, xMax);
+    xMaxDisplay.innerText = formatValues(xMax);
+
+    yMax = findMax(y, yMax);
+    yMaxDisplay.innerText = formatValues(yMax);
+
+    zMax = findMax(z, zMax);
+    zMaxDisplay.innerText = formatValues(zMax);
+  };
+
+  const findMax = (val, maxVal) => {
+    if (Math.abs(val) > Math.abs(maxVal)) {
+      return val;
     } else {
-      xValueDisplay.innerText = x.toFixed(3);
+      return maxVal;
     }
-    if (y >= 0) {
-      yValueDisplay.innerText = '+' + y.toFixed(3);
-    } else {
-      yValueDisplay.innerText = y.toFixed(3);
-    }
-    if (z >= 0) {
-      zValueDisplay.innerText = '+' + z.toFixed(3);
-    } else {
-      zValueDisplay.innerText = z.toFixed(3);
-    }
+  };
+
+  const formatValues = val => {
+    return val >= 0 ? '+' + val.toFixed(3) : val.toFixed(3);
+  };
+
+  const resetMax = () => {
+    xMax = 0;
+    yMax = 0;
+    zMax = 0;
   };
 
   // --------- Testing updating accel values - not needed later
@@ -50,9 +78,11 @@
     const y = Math.random() - 0.5;
     const z = Math.random() - 0.5;
     displayValues(x, y, z);
+    displayMaxValues(x, y, z);
   };
   setInterval(generateRandomNumbers, 500);
   // --------- Testing updating accel values - not needed later
 
+  resetMaxBtn.addEventListener('click', resetMax);
   initSensors();
 })();
