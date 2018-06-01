@@ -34,15 +34,15 @@ h2 {
   margin: 0 5px;
 }
 
-#x-value {
+#x-value, #x-max {
   color: #990000;
 }
 
-#y-value {
+#y-value, #y-max {
   color: #003366;
 }
 
-#z-value {
+#z-value, #z-max {
   color: #476f01;
 }
 
@@ -50,6 +50,14 @@ h2 {
   color: #999;
   font-weight: 100;
   font-size: 1.5em;
+}
+
+#max-values .units {
+  font-size: 1em; 
+}
+
+#max-values p {
+  display: inline-block;
 }
 
 .other-info {
