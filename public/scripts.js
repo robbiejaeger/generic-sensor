@@ -27,15 +27,29 @@
   };
 
   const displayValues = (x, y, z) => {
-    xValueDisplay.innerText = x.toFixed(3);
-    yValueDisplay.innerText = y.toFixed(3);
-    zValueDisplay.innerText = z.toFixed(3);
+    if (x >= 0) {
+      xValueDisplay.innerText = '+' + x.toFixed(3);
+    } else {
+      xValueDisplay.innerText = x.toFixed(3);
+    }
+    if (y >= 0) {
+      yValueDisplay.innerText = '+' + y.toFixed(3);
+    } else {
+      yValueDisplay.innerText = y.toFixed(3);
+    }
+    if (z >= 0) {
+      zValueDisplay.innerText = '+' + z.toFixed(3);
+    } else {
+      zValueDisplay.innerText = z.toFixed(3);
+    }
   };
 
   // --------- Testing updating accel values - not needed later
   const generateRandomNumbers = () => {
-    const x = Math.random();
-    displayValues(x, x, x);
+    const x = Math.random() - 0.5;
+    const y = Math.random() - 0.5;
+    const z = Math.random() - 0.5;
+    displayValues(x, y, z);
   };
   setInterval(generateRandomNumbers, 500);
   // --------- Testing updating accel values - not needed later
