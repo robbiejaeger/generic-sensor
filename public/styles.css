@@ -77,6 +77,10 @@ a {
 
 /* MAX VALUES DISPLAY */
 
+#max-values {
+  position: relative;
+}
+
 #max-values .units {
   font-size: 1em;
 }
@@ -90,6 +94,19 @@ a {
   font-family: 'Roboto Mono', monospace;
   font-size: 1.75em;
   margin: 0 5px;
+}
+
+#reset-max {
+  background-color: #3F51B5;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.4);
+  color: #FFF;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  top: -20px;
+  left: 75%;
 }
 
 /* OTHER INFO */
