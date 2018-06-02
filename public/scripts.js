@@ -11,7 +11,7 @@
   yMax = 0;
   zMax = 0;
 
-  const accelSensor = new Accelerometer();
+  const accelSensor = new Accelerometer({ frequency: 60 });
 
   const initSensors = () => {
     accelSensor.onreading = updateAccelerationValues;
@@ -62,7 +62,7 @@
   };
 
   const formatValues = val => {
-    return val >= 0 ? '+' + val.toFixed(3) : val.toFixed(3);
+    return val >= 0 ? '+' + val.toFixed(2) : val.toFixed(2);
   };
 
   // --------- Testing updating accel values - not needed later
