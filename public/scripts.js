@@ -11,8 +11,9 @@
   yMax = 0;
   zMax = 0;
 
+  const accelSensor = new Accelerometer();
+
   const initSensors = () => {
-    const accelSensor = new Accelerometer();
     accelSensor.onreading = updateAccelerationValues;
     accelSensor.onerror = displayError;
     accelSensor.start();
@@ -20,9 +21,9 @@
 
   const updateAccelerationValues = () => {
     console.log('Accelerometer reading.');
-    console.log(x, y, z);
-    displayValues(x, y, z);
-    displayMaxValues(x, y, z);
+    console.log(accelSensor.x, accelSensor.y, accelSensor.z);
+    displayValues(accelSensor.x, accelSensor.y, accelSensor.z);
+    displayMaxValues(accelSensor.x, accelSensor.y, accelSensor.z);
   };
 
   const handleError = event => {
