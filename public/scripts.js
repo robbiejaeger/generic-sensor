@@ -9,9 +9,7 @@
   const yMaxDisplay = document.getElementById('y-max');
   const zMaxDisplay = document.getElementById('z-max');
 
-  xMax = 0;
-  yMax = 0;
-  zMax = 0;
+  const maxVals = {xMax: 0, yMax: 0, zMax: 0};
 
   // Accelerometer API ---------------------------------------
 
@@ -48,15 +46,15 @@
   };
 
   const displayMaxValues = (x, y, z) => {
-    determineMax(x, xMax, xMaxDisplay);
+    determineMax(x, 'xMax', xMaxDisplay);
     // xMax = findMax(x, xMax);
     // xMaxDisplay.innerText = formatValues(xMax);
 
-    yMax = findMax(y, yMax);
-    yMaxDisplay.innerText = formatValues(yMax);
+    // yMax = findMax(y, yMax);
+    // yMaxDisplay.innerText = formatValues(yMax);
 
-    zMax = findMax(z, zMax);
-    zMaxDisplay.innerText = formatValues(zMax);
+    // zMax = findMax(z, zMax);
+    // zMaxDisplay.innerText = formatValues(zMax);
   };
 
   const findMax = (val, maxVal) => {
@@ -68,8 +66,8 @@
   };
 
   const determineMax = (val, maxVal, displayEl) => {
-    if (Math.abs(val) > Math.abs(maxVal)) {
-      maxVal = val;
+    if (Math.abs(val) > Math.abs(maxVals[maxVal])) {
+      maxVals[maxVal] = val;
       displayEl.innerText = formatValues(val);
     }
   };
