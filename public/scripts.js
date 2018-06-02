@@ -11,6 +11,8 @@
   yMax = 0;
   zMax = 0;
 
+  // Accelerometer API ---------------------------------------
+
   const accelSensor = new Accelerometer({ frequency: 15 });
 
   const initSensors = () => {
@@ -25,6 +27,8 @@
     displayValues(accelSensor.x, accelSensor.y, accelSensor.z);
     displayMaxValues(accelSensor.x, accelSensor.y, accelSensor.z);
   };
+
+  // Accelerometer API ---------------------------------------
 
   const handleError = event => {
     if (event.error.name === 'NotReadableError') {
@@ -64,17 +68,6 @@
   const formatValues = val => {
     return val >= 0 ? '+' + val.toFixed(2) : val.toFixed(2);
   };
-
-  // --------- Testing updating accel values - not needed later
-  // const generateRandomNumbers = () => {
-  //   const x = Math.random() - 0.5;
-  //   const y = Math.random() - 0.5;
-  //   const z = Math.random() - 0.5;
-  //   displayValues(x, y, z);
-  //   displayMaxValues(x, y, z);
-  // };
-  // setInterval(generateRandomNumbers, 500);
-  // --------- Testing updating accel values - not needed later
 
   initSensors();
 })();
