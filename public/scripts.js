@@ -3,6 +3,8 @@
   const yValueDisplay = document.getElementById('y-value');
   const zValueDisplay = document.getElementById('z-value');
 
+  const errorDisplay = document.getElementById('error-display');
+
   const xMaxDisplay = document.getElementById('x-max');
   const yMaxDisplay = document.getElementById('y-max');
   const zMaxDisplay = document.getElementById('z-max');
@@ -13,7 +15,7 @@
 
   // Accelerometer API ---------------------------------------
 
-  const accelSensor = new Accelerometer({ frequency: 15 });
+  const accelSensor = new Accelerometer({ frequency: 12 });
 
   const initSensors = () => {
     accelSensor.onreading = updateAccelerationValues;
@@ -22,13 +24,9 @@
   };
 
   const updateAccelerationValues = () => {
-    console.log('Accelerometer reading.');
-    console.log(accelSensor.x, accelSensor.y, accelSensor.z);
     displayValues(accelSensor.x, accelSensor.y, accelSensor.z);
     displayMaxValues(accelSensor.x, accelSensor.y, accelSensor.z);
   };
-
-  // Accelerometer API ---------------------------------------
 
   const handleError = event => {
     if (event.error.name === 'NotReadableError') {
@@ -36,8 +34,11 @@
     }
   };
 
+  // Accelerometer API ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
   const displayError = () => {
-    console.log('Accelerometer is not available.');
+    errorDisplay.style = 'display: block;';
+    errorDisplay.innerText = 'Accelerometer not available on this device.';
   };
 
   const displayValues = (x, y, z) => {

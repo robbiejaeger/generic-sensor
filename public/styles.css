@@ -57,7 +57,7 @@ a {
   margin: 0 5px;
 }
 
-#x-value, #x-max {
+#x-value, #x-max, #error-display {
   color: #D32F2F;
 }
 
