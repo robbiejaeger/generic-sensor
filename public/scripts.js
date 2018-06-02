@@ -7,8 +7,6 @@
   const yMaxDisplay = document.getElementById('y-max');
   const zMaxDisplay = document.getElementById('z-max');
 
-  const resetMaxBtn = document.getElementById('reset-max');
-
   xMax = 0;
   yMax = 0;
   zMax = 0;
@@ -66,12 +64,6 @@
     return val >= 0 ? '+' + val.toFixed(3) : val.toFixed(3);
   };
 
-  const resetMax = () => {
-    xMax = 0;
-    yMax = 0;
-    zMax = 0;
-  };
-
   // --------- Testing updating accel values - not needed later
   const generateRandomNumbers = () => {
     const x = Math.random() - 0.5;
@@ -83,6 +75,5 @@
   setInterval(generateRandomNumbers, 500);
   // --------- Testing updating accel values - not needed later
 
-  resetMaxBtn.addEventListener('click', resetMax);
   initSensors();
 })();
