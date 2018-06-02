@@ -11,7 +11,7 @@
   yMax = 0;
   zMax = 0;
 
-  const accelSensor = new Accelerometer({ frequency: 10 });
+  const accelSensor = new Accelerometer({ frequency: 15 });
 
   const initSensors = () => {
     accelSensor.onreading = updateAccelerationValues;
