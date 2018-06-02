@@ -47,22 +47,8 @@
 
   const displayMaxValues = (x, y, z) => {
     determineMax(x, 'xMax', xMaxDisplay);
-    // xMax = findMax(x, xMax);
-    // xMaxDisplay.innerText = formatValues(xMax);
-
-    // yMax = findMax(y, yMax);
-    // yMaxDisplay.innerText = formatValues(yMax);
-
-    // zMax = findMax(z, zMax);
-    // zMaxDisplay.innerText = formatValues(zMax);
-  };
-
-  const findMax = (val, maxVal) => {
-    if (Math.abs(val) > Math.abs(maxVal)) {
-      return val;
-    } else {
-      return maxVal;
-    }
+    determineMax(y, 'yMax', yMaxDisplay);
+    determineMax(z, 'zMax', zMaxDisplay);
   };
 
   const determineMax = (val, maxVal, displayEl) => {
