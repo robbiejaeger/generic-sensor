@@ -65,14 +65,14 @@
   };
 
   // --------- Testing updating accel values - not needed later
-  const generateRandomNumbers = () => {
-    const x = Math.random() - 0.5;
-    const y = Math.random() - 0.5;
-    const z = Math.random() - 0.5;
-    displayValues(x, y, z);
-    displayMaxValues(x, y, z);
-  };
-  setInterval(generateRandomNumbers, 500);
+  // const generateRandomNumbers = () => {
+  //   const x = Math.random() - 0.5;
+  //   const y = Math.random() - 0.5;
+  //   const z = Math.random() - 0.5;
+  //   displayValues(x, y, z);
+  //   displayMaxValues(x, y, z);
+  // };
+  // setInterval(generateRandomNumbers, 500);
   // --------- Testing updating accel values - not needed later
 
   initSensors();
