@@ -18,8 +18,9 @@ header {
 section {
   background-color: #FFF;
   border-bottom: 1px solid #BDBDBD;
-  margin: 0;
+  margin: 0 auto;
   padding: 15px 20px;
+  max-width: 650px;
 }
 
 h1 {
@@ -57,7 +58,7 @@ a {
   margin: 0 5px;
 }
 
-#x-value, #x-max, #error-display {
+#x-value, #x-max {
   color: #D32F2F;
 }
 
@@ -67,6 +68,11 @@ a {
 
 #z-value, #z-max {
   color: #388E3C;
+}
+
+#error-display {
+  color: #D32F2F;
+  font-weight: 700; 
 }
 
 .units {
@@ -100,13 +106,16 @@ a {
   background-color: #3F51B5;
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
   color: #FFF;
-  border: none;
   border-radius: 50%;
-  position: absolute;
+  border: none;
+  font-size: 0.9em;
+  outline: none;
+
   height: 60px;
   width: 60px;
+  position: absolute;
   top: -20px;
-  left: 75%;
+  right: 5%;
 }
 
 #reset-max:active {
@@ -117,9 +126,9 @@ a {
 /* OTHER INFO */
 
 .other-info {
-  padding: 15px 40px;
+  padding: 15px 20px;
 }
 
 .other-info p {
-  margin: 10px 0;
+  margin: 10px 20px;
 }
