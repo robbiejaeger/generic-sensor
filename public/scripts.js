@@ -4,6 +4,7 @@
   const zValueDisplay = document.getElementById('z-value');
 
   const errorDisplay = document.getElementById('error-display');
+  const resetMaxBtn = document.getElementById('reset-max');
 
   const xMaxDisplay = document.getElementById('x-max');
   const yMaxDisplay = document.getElementById('y-max');
@@ -58,9 +59,14 @@
     }
   };
 
+  const resetMax = () => {
+    maxVals = {xMax: 0, yMax: 0, zMax: 0};
+  };
+
   const formatValues = val => {
     return val >= 0 ? '+' + val.toFixed(2) : val.toFixed(2);
   };
 
+  resetMaxBtn.addEventListener('click', resetMax);
   initSensors();
 })();
