@@ -48,8 +48,9 @@
   };
 
   const displayMaxValues = (x, y, z) => {
-    xMax = findMax(x, xMax);
-    xMaxDisplay.innerText = formatValues(xMax);
+    determineMax(x, xMax, xMaxDisplay);
+    // xMax = findMax(x, xMax);
+    // xMaxDisplay.innerText = formatValues(xMax);
 
     yMax = findMax(y, yMax);
     yMaxDisplay.innerText = formatValues(yMax);
@@ -63,6 +64,13 @@
       return val;
     } else {
       return maxVal;
+    }
+  };
+
+  const determineMax = (val, maxVal, displayEl) => {
+    if (Math.abs(val) > Math.abs(maxVal)) {
+      maxVal = val;
+      displayEl.innerText = formatValues(val);
     }
   };
 

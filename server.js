@@ -18,5 +18,5 @@ app.use((request, response, next) => {
 });
 
 app.listen(app.get('port'), () => {
-  console.log(`Generic Sensor app running on port ${app.get('port')}.`)
+  console.log(`Generic Sensor app running on port ${app.get('port')}.`);
 });
