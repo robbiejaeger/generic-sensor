@@ -61,6 +61,9 @@
 
   const resetMax = () => {
     maxVals = {xMax: 0, yMax: 0, zMax: 0};
+    xMaxDisplay.innerText = formatValues(0);
+    yMaxDisplay.innerText = formatValues(0);
+    zMaxDisplay.innerText = formatValues(0);
   };
 
   const formatValues = val => {
