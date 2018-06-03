@@ -132,3 +132,25 @@ a {
 .other-info p {
   margin: 10px 20px;
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 350px) {
+  h1 {
+    font-size: 1.75em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  #reset-max {
+    height: 55px;
+    width: 55px;
+    right: 3%;
+  }
+
+  .other-info p {
+    margin: 10px 5px;
+  }
+}
