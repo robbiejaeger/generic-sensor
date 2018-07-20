@@ -107,9 +107,10 @@ a {
 button {
   background-color: #3F51B5;
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  border: none;
   color: #FFF;
-  outline: none;
   font-size: 1em;
+  outline: none;
 }
 
 button:disabled {
@@ -128,7 +129,6 @@ button:active {
 
 #reset-max {
   border-radius: 50%;
-  border: none;
   font-size: 0.9em;
   
   height: 60px;
