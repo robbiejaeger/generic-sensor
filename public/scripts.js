@@ -5,6 +5,7 @@
 
   const errorDisplay = document.getElementById('error-display');
   const resetMaxBtn = document.getElementById('reset-max');
+  const startStopBtn = document.getElementById('start-stop');
 
   const xMaxDisplay = document.getElementById('x-max');
   const yMaxDisplay = document.getElementById('y-max');
@@ -18,8 +19,8 @@
 
   const initSensors = () => {
     accelSensor.onreading = updateAccelerationValues;
-    accelSensor.onerror = displayError;
-    accelSensor.start();
+    accelSensor.onerror = handleError;
+    startSensorReading(accelSensor);
   };
 
   const updateAccelerationValues = () => {
@@ -30,7 +31,16 @@
   const handleError = event => {
     if (event.error.name === 'NotReadableError') {
       displayError();
+      startStopBtn.disabled = true;
     }
+  };
+
+  const startSensorReading = sensor => {
+    sensor.start();
+  };
+
+  const stopSensorReading = sensor => {
+    sensor.stop();
   };
 
   // Accelerometer API ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -72,6 +82,17 @@
     return val >= 0 ? '+' + val.toFixed(2) : val.toFixed(2);
   };
 
+  const toggleSensorStartStop = () => {
+    if (accelSensor.activated) {
+      stopSensorReading(accelSensor);
+      startStopBtn.innerText = 'Start Sensor';
+    } else {
+      startSensorReading(accelSensor);
+      startStopBtn.innerText = 'Stop Sensor';
+    }
+  };
+
+  startStopBtn.addEventListener('click', toggleSensorStartStop);
   resetMaxBtn.addEventListener('click', resetMax);
   initSensors();
 })();
