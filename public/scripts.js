@@ -78,6 +78,12 @@
     zMaxDisplay.innerText = formatValues(0);
   };
 
+  const resetDisplay = () => {
+    xValueDisplay.innerText = formatValues(0);
+    yValueDisplay.innerText = formatValues(0);
+    zValueDisplay.innerText = formatValues(0);
+  };
+
   const formatValues = val => {
     return val >= 0 ? '+' + val.toFixed(2) : val.toFixed(2);
   };
@@ -85,6 +91,7 @@
   const toggleSensorStartStop = () => {
     if (accelSensor.activated) {
       stopSensorReading(accelSensor);
+      resetDisplay();
       startStopBtn.innerText = 'Start Sensor';
     } else {
       startSensorReading(accelSensor);
