@@ -102,25 +102,40 @@ a {
   margin: 0 5px;
 }
 
-#reset-max {
+/* BUTTONS */
+
+button {
   background-color: #3F51B5;
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
   color: #FFF;
+  outline: none;
+  font-size: 1em;
+}
+
+button:disabled {
+  background-color: #BDBDBD;
+}
+
+button:active {
+  background-color: #303F9F;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#start-stop {
+  height: 40px;
+  width: 110px;
+}
+
+#reset-max {
   border-radius: 50%;
   border: none;
   font-size: 0.9em;
-  outline: none;
-
+  
   height: 60px;
   width: 60px;
   position: absolute;
   top: -20px;
   right: 5%;
-}
-
-#reset-max:active {
-  background-color: #303F9F;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 /* OTHER INFO */
