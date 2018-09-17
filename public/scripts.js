@@ -18,8 +18,8 @@
   const accelSensor = new Accelerometer({ frequency: 12 });
 
   const initSensors = () => {
-    accelSensor.onreading = updateAccelerationValues;
-    accelSensor.onerror = handleError;
+    accelSensor.addEventListener('error', handleError);
+    accelSensor.addEventListener('reading', updateAccelerationValues);
     startSensorReading(accelSensor);
   };
 
@@ -30,7 +30,10 @@
 
   const handleError = event => {
     if (event.error.name === 'NotReadableError') {
-      displayError();
+      displayError('Accelerometer not available on this device.');
+      startStopBtn.disabled = true;
+    } else if (event.error.name === 'NotAllowedError') {
+      displayError('Permission to access sensor was denied.');
       startStopBtn.disabled = true;
     }
   };
@@ -45,9 +48,9 @@
 
   // Accelerometer API ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  const displayError = () => {
+  const displayError = text => {
     errorDisplay.style = 'display: block;';
-    errorDisplay.innerText = 'Accelerometer not available on this device.';
+    errorDisplay.innerText = text;
   };
 
   const displayValues = (x, y, z) => {
