@@ -7,6 +7,6 @@ The JavaScript code specific to the accelerometer can be found in `/public/scrip
 
 The demo will only work on devices that have accelerometers and use Chrome version 67 or higher.
 
-<div style="text-align:center">
+<div align="center">
   <img src="https://i.imgur.com/bt1rpQ8.png" alt="application screenshot" width="250"/>  
 </div>
